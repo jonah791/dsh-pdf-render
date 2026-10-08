@@ -1,0 +1,4 @@
+- insert:
+    - id: agent-pdf-render
+      name: dsh-pdf-render
+      config: {}
