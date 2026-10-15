@@ -120,6 +120,12 @@ cd self-plugins/dsh-pdf-render && npm test
 - **pages 解析是纯函数**：`src/range.ts` 无 IO，可离线单测（31 条里大半在这一层）。
 - **走 pypdfium2 而非 pdftoppm**：本机没有 poppler / ghostscript——**依赖少一个是一个**。
 
+## 相关文档
+
+- [`docs/semantic.md`](docs/semantic.md) —— **权威契约**（定位/反定位 · 验收表）
+- 中心仓：[alice-digital-life](https://github.com/jonah791/alice-digital-life)（本插件归 **感知层**）
+- 相关技能：`document-processing`（PDF/Word/Excel/PPT 的本机处理配方）
+
 ## License
 
 MIT © jonah791
