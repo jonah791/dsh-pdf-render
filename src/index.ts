@@ -186,6 +186,9 @@ function runPy(python: string, req: Record<string, unknown>): PyResult {
       input: JSON.stringify(req),
       encoding: 'utf-8',
       timeout: 120_000,
+      // Windows：python.exe 是控制台程序，漏了这项每次渲染都会弹一个空白控制台窗口
+      // （一次调用会 spawn 两次：探页数 + 渲染 ⇒ 连闪两下）。同 2026-10-19 wq-bridge 的修法。
+      windowsHide: true,
     })
     if (p.error) return { ok: false, error: `无法启动 ${python}：${String(p.error)}` }
     if (p.status !== 0) {
