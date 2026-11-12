@@ -80,6 +80,7 @@ export function apply(ctx: Context, config: Config): void {
 
   ctx.tools.register(defineTool({
     name: 'pdf_render',
+    deferLoading: true,
     description:
       '把 PDF 的指定页渲染成 PNG，返回**文件路径**（不返回像素——看图请用 read_image / vision_ask）。'
       + 'pages 支持 1 / 1-3 / 2,5 / all。本机走 pypdfium2（无 poppler/gs）。',
